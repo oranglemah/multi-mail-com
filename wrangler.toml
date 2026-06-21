@@ -1,0 +1,26 @@
+name = "maail-portal"
+main = "src/index.js"
+compatibility_date = "2025-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Primary domain (default untuk display)
+DOMAIN = "bahlilun.email"
+# Semua domain yang didukung (pisahkan dengan koma, tambah domain baru di sini)
+ALLOWED_DOMAINS = "bahlilun.email,mazydatir.tech,nailmazy.me"
+APP_BASE_URL = "https://portal.bahlilun.email"
+DEFAULT_ALIAS_LIMIT = "3"
+SESSION_TTL_SECONDS = "1209600"
+RESET_TTL_SECONDS = "3600"
+MAX_STORE_BYTES = "10485760"
+MAX_TEXT_CHARS = "500000"
+INLINE_ATTACHMENT_DB_BYTES = "65536"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "maail_portal"
+database_id = "46758d94-4edb-4b46-bd9e-476e2b2daf0a"
+
+[[r2_buckets]]
+binding = "MAIL_R2"
+bucket_name = "maail-portal-mail"
