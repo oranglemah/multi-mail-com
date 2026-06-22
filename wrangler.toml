@@ -19,7 +19,7 @@ INLINE_ATTACHMENT_DB_BYTES = "65536"
 [[d1_databases]]
 binding = "DB"
 database_name = "maail_portal2"
-database_id = "bbb9319e-d221-4694-83e9-07b6bc118a76"
+database_id = "3c05bfa6-89fe-436b-b72e-77236b946c3a"
 
 [[r2_buckets]]
 binding = "MAIL_R2"
