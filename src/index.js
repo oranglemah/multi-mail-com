@@ -68,6 +68,11 @@ function safeInt(v, fallback) {
   return Number.isFinite(n) ? n : fallback;
 }
 
+function envFlag(v, fallback = false) {
+  if (v === undefined || v === null || v === "") return fallback;
+  return /^(1|true|yes|on)$/i.test(String(v).trim());
+}
+
 function nowSec() {
   return Math.floor(Date.now() / 1000);
 }
@@ -3209,7 +3214,7 @@ export default {
       let htmlPart = (parsed.html || "").slice(0, maxTextChars);
 
       let raw_key = null;
-      if (env.MAIL_R2) {
+      if (env.MAIL_R2 && envFlag(env.STORE_RAW_EMAILS, false)) {
         raw_key = `emails/${id}.eml`;
         ctx.waitUntil(
           env.MAIL_R2.put(raw_key, ab, { httpMetadata: { contentType: "message/rfc822" } })
