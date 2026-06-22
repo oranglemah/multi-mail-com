@@ -28,7 +28,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           echo "Running migration to add multi-domain support..."
-          npx wrangler@latest d1 execute maail_portal2 --file=./migration.sql --remote || echo "Migration may have already been applied or no migration needed"
+          npx wrangler@latest d1 execute maail_portal --file=./migration.sql --remote || echo "Migration may have already been applied or no migration needed"
       
       # Apply/verify full schema
       - name: Apply Schema to D1
