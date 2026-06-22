@@ -30,7 +30,7 @@ jobs:
         run: |
           npx wrangler@3 --version
           npx wrangler@3 d1 list
-          npx wrangler@3 d1 execute mail_portal2 --file=./schema.sql --remote
+          npx wrangler@3 d1 execute maail_portal2 --file=./schema.sql --remote
 
       - name: Deploy Worker
         uses: cloudflare/wrangler-action@v3
